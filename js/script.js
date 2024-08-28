@@ -316,11 +316,11 @@ swipeer.slideNext();
 
 /*===========================================================================*/
 
-const header = document.querySelectorAll('.header');
-
-if (header.length > 0) {
-    for (let i = 0; i < header.length; i++) {
-        const scrollHead = header[i].getBoundingClientRect().top;
-        console.log(scrollHead);
+const header = document.querySelector('.header');
+window.addEventListener('scroll', function () {
+    if (window.scrollY > 50) {
+        header.classList.add('_active');
+    } else {
+        header.classList.remove('_active');
     }
-}
+});
